@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DisplayMoviesViewController.swift
 //  Movies
 //
 //  Created by Arthur Castro on 21/03/19.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DisplayMoviesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
+    
+
 
 
 }
-
