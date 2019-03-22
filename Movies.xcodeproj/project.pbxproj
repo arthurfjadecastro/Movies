@@ -14,6 +14,8 @@
 		3DCA78A6224461A0007761C7 /* DisplayMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCA78A5224461A0007761C7 /* DisplayMoviesViewController.swift */; };
 		3DCA78A922446308007761C7 /* DisplayMovies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCA78A822446308007761C7 /* DisplayMovies.storyboard */; };
 		3DCA78AC224468B0007761C7 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCA78AB224468B0007761C7 /* Display.swift */; };
+		3DCA78AE22446AE0007761C7 /* Coordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCA78AD22446AE0007761C7 /* Coordinable.swift */; };
+		3DCA78B022446B9E007761C7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCA78AF22446B9E007761C7 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		3DCA78A5224461A0007761C7 /* DisplayMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMoviesViewController.swift; sourceTree = "<group>"; };
 		3DCA78A822446308007761C7 /* DisplayMovies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisplayMovies.storyboard; sourceTree = "<group>"; };
 		3DCA78AB224468B0007761C7 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		3DCA78AD22446AE0007761C7 /* Coordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinable.swift; sourceTree = "<group>"; };
+		3DCA78AF22446B9E007761C7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				3DCA78AB224468B0007761C7 /* Display.swift */,
+				3DCA78AD22446AE0007761C7 /* Coordinable.swift */,
+				3DCA78AF22446B9E007761C7 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -218,6 +224,8 @@
 			files = (
 				3DCA78A6224461A0007761C7 /* DisplayMoviesViewController.swift in Sources */,
 				3DCA78AC224468B0007761C7 /* Display.swift in Sources */,
+				3DCA78B022446B9E007761C7 /* Coordinator.swift in Sources */,
+				3DCA78AE22446AE0007761C7 /* Coordinable.swift in Sources */,
 				3DCA7886224460DE007761C7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
