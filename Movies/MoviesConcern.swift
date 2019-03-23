@@ -12,11 +12,11 @@ import UIKit
 class MoviesConcern {
     
     //MARK: - Properties
-    private var title = String()
-    private var image = UIImage()
-    private var duration = String()
-    private var genre = String()
-    private var synopsis = String()
+     var title = String()
+     var image = UIImage()
+     var duration = String()
+     var genre = String()
+     var synopsis = String()
     
     
     init(title: String, image: UIImage, duration: String, genre: String, synopsis: String) {

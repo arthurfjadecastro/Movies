@@ -23,6 +23,7 @@
 		3DE971B62245D40D0003C4A1 /* ae1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE971B42245D40D0003C4A1 /* ae1.png */; };
 		3DE971B72245D40D0003C4A1 /* ae2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE971B52245D40D0003C4A1 /* ae2.png */; };
 		3DE971B92245DB470003C4A1 /* iconMovies.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE971B82245DB470003C4A1 /* iconMovies.png */; };
+		3DE971BB2245E1890003C4A1 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE971BA2245E1890003C4A1 /* MoviesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		3DE971B42245D40D0003C4A1 /* ae1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ae1.png; sourceTree = "<group>"; };
 		3DE971B52245D40D0003C4A1 /* ae2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ae2.png; sourceTree = "<group>"; };
 		3DE971B82245DB470003C4A1 /* iconMovies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconMovies.png; sourceTree = "<group>"; };
+		3DE971BA2245E1890003C4A1 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				3DCA78A822446308007761C7 /* DisplayMovies.storyboard */,
 				3DCA78B622448616007761C7 /* MovieDetailsViewController.swift */,
 				3DCA78B822448633007761C7 /* MovieDetails.storyboard */,
+				3DE971BA2245E1890003C4A1 /* MoviesCollectionViewCell.swift */,
 			);
 			name = DisplayMovies;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE971BB2245E1890003C4A1 /* MoviesCollectionViewCell.swift in Sources */,
 				3DCA78B722448616007761C7 /* MovieDetailsViewController.swift in Sources */,
 				3DE971B32245D1F90003C4A1 /* MoviesConcern.swift in Sources */,
 				3DCA78A6224461A0007761C7 /* DisplayMoviesViewController.swift in Sources */,
