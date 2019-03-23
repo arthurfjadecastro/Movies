@@ -159,6 +159,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y0W-sX-2o2"/>
                     </view>
+                    <connections>
+                        <outlet property="moviesCollectionView" destination="bCu-Aq-Eak" id="nDa-HU-27f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdT-Nj-AxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
