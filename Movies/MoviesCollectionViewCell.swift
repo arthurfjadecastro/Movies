@@ -33,12 +33,12 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     
     
     
-    var movie: MoviesConcern! {
-        didSet{
-//            self.updateUI()
-        }
-    }
-    
+//    var movie: MoviesConcern! {
+//        didSet{
+////            self.updateUI()
+//        }
+//    }
+//    
     
 //    func updateUI(){
 //        if let _movie = self.movie {

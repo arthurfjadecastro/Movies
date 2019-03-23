@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         MoviesCoordinator.installCoordinator()
+        let fetcher = MoviesFetcherFactory.default
+        fetcher.fetch { (result) in
+            switch result {
+            case .error(let error):
+                print(error.localizedDescription)
+            case .success(let movies):
+                print(movies)
+            }
+        }
         return true
     }
 

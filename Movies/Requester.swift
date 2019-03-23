@@ -11,6 +11,7 @@ import Alamofire
 
 
 
+
 enum RequesterError: Error {
     case noValue(String)
     case conversionFailed(String)
@@ -21,8 +22,8 @@ class Requester {
     
     
     func get(_ url: URL, parameters: [String:String], completion: @escaping (Result<String>) -> Void ) {
-        
-        Alamofire.request(url.path, method: .get).responseString { response in
+
+        Alamofire.request(url.absoluteString, method: .get, parameters: parameters).responseString { response in
             if let error =  response.error {
                 completion(Result.error(error))
                 return
@@ -56,8 +57,9 @@ class Requester {
                 }
             }
         }
-        
     }
+    
+    
     
     
     

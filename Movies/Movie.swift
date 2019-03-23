@@ -17,22 +17,19 @@ enum Genre {
 }
 
 
-struct MoviesConcern {
+struct Movie {
     
     //MARK: - Properties
-     var title = String()
-     var image = UIImage()
-     var duration = TimeInterval()
-     var genre: Genre?
-     var synopsis = String()
+    let title: String
+    let image: URL
+    let genres: [String]
+    let synopsis: String
     
     
-    
-    init(title: String, image: UIImage, duration: TimeInterval, genre: Genre, synopsis: String) {
+    init(title: String, image: URL, genres: [String], synopsis: String) {
         self.title = title
         self.image = image
-        self.duration = duration
-        self.genre = genre
+        self.genres = genres
         self.synopsis = synopsis
     }
 
