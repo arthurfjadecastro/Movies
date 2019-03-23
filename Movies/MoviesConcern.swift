@@ -9,36 +9,31 @@
 import Foundation
 import UIKit
 
-class MoviesConcern {
+
+
+
+enum Genre {
+    case action
+}
+
+
+struct MoviesConcern {
     
     //MARK: - Properties
      var title = String()
      var image = UIImage()
-     var duration = String()
-     var genre = String()
+     var duration = TimeInterval()
+     var genre: Genre?
      var synopsis = String()
     
     
-    init(title: String, image: UIImage, duration: String, genre: String, synopsis: String) {
+    
+    init(title: String, image: UIImage, duration: TimeInterval, genre: Genre, synopsis: String) {
         self.title = title
         self.image = image
         self.duration = duration
         self.genre = genre
         self.synopsis = synopsis
     }
-    
-    
-    
-    static func fetchMovies() -> [MoviesConcern] {
-        return [
-            MoviesConcern(title: "ae1", image:#imageLiteral(resourceName: "movie01.jpeg") , duration: "10 hours", genre: "Fe", synopsis: "MTO LOUCO O FILME"),
-            MoviesConcern(title: "ae12", image:#imageLiteral(resourceName: "movie02.jpeg") , duration: "5 hours", genre: "MA", synopsis: "MTO LOUCO O FILME2"),
-            MoviesConcern(title: "ae12", image:#imageLiteral(resourceName: "movie03.png") , duration: "5 hours", genre: "MA", synopsis: "MTO LOUCO O FILME2"),
-            MoviesConcern(title: "ae12", image: #imageLiteral(resourceName: "movie04.png"), duration: "5 hours", genre: "MA", synopsis: "MTO LOUCO O FILME2")
-            
-        ]
-    }
-    
-    
-    
+
 }

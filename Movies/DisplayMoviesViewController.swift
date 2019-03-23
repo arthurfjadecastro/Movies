@@ -16,7 +16,7 @@ class DisplayMoviesViewController: UIViewController, Coordinable {
     //MARK: - Properties
     
     var coordinator: Coordinator?
-    var movies = MoviesConcern.fetchMovies()
+//    var movies = MoviesConcern.fetchMovies()
     
     //MARK: - IBO
     
@@ -26,13 +26,13 @@ class DisplayMoviesViewController: UIViewController, Coordinable {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupCollectionView()
+        self.setupCollectionViewLayout()
         
         
     }
     
     
-    func setupCollectionView(){
+    func setupCollectionViewLayout(){
         let _screenSize = UIScreen.main.bounds.size
         let _cellWidth = floor(_screenSize.width * kScale)
         let _cellHeight = floor(_screenSize.height * kScale)
@@ -60,15 +60,15 @@ class DisplayMoviesViewController: UIViewController, Coordinable {
 
 extension DisplayMoviesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.movies.count
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let _cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesCollectionViewCell", for: indexPath) as! MoviesCollectionViewCell
         
-        let _movie = self.movies[indexPath.item]
+//        let _movie = self.movies[indexPath.item]
         
-        _cell.movie = _movie
+//        _cell.movie = _movie
         
         return _cell
         

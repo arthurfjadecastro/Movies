@@ -35,30 +35,27 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     
     var movie: MoviesConcern! {
         didSet{
-            self.updateUI()
+//            self.updateUI()
         }
     }
     
     
-    func updateUI(){
-        if let _movie = self.movie {
-            self.movieImageView.image = _movie.image
-            self.movieTitle.text = _movie.title
-            self.movieDuration.text = _movie.duration
-            self.movieGenre.text = _movie.genre
-            self.movieDescription.text = _movie.synopsis
-        } else {
-            self.movieImageView.image = nil
-            self.movieTitle.text = nil
-            self.movieDuration.text = nil
-            self.movieGenre.text = nil
-            self.movieDescription.text = nil
-        }
-        
-  
-        
-        
-    }
+//    func updateUI(){
+//        if let _movie = self.movie {
+//            self.movieImageView.image = _movie.image
+//            self.movieTitle.text = _movie.title
+//            self.movieDuration.text = _movie.duration
+//            self.movieGenre.text = _movie.genre
+//            self.movieDescription.text = _movie.synopsis
+//        } else {
+//            self.movieImageView.image = nil
+//            self.movieTitle.text = nil
+//            self.movieDuration.text = nil
+//            self.movieGenre.text = nil
+//            self.movieDescription.text = nil
+//        }
+//
+//    }
     
     
 }
