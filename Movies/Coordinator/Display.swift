@@ -18,8 +18,10 @@ struct Display {
     
     
     ///Add Calling Screens
-    static let displayMovies = Display(controller: "DisplayMoviesViewController", storyboard: "DisplayMovies")
+    static let displayMovies = Display(controller: "DisplayMovies", storyboard: "DisplayMovies")
     
+    
+    static let newScreen = Display(controller: "MovieDetails", storyboard: "MovieDetails")
     
     
     

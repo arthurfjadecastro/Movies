@@ -13,7 +13,7 @@
         <!--Display Movies View Controller-->
         <scene sceneID="We1-jd-I95">
             <objects>
-                <viewController storyboardIdentifier="DisplayMoviesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gCc-32-Vz3" customClass="DisplayMoviesViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DisplayMovies" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gCc-32-Vz3" customClass="DisplayMoviesViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jzy-EF-Fag">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,6 +24,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eu-Nq-W5k">
+                                <rect key="frame" x="136" y="82" width="112" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testCoordinator:" destination="gCc-32-Vz3" eventType="touchUpInside" id="nDX-lH-d8l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>

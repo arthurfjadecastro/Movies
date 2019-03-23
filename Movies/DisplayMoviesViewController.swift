@@ -8,7 +8,15 @@
 
 import UIKit
 
-class DisplayMoviesViewController: UIViewController {
+
+
+
+
+class DisplayMoviesViewController: UIViewController, Coordinable {
+    
+    
+    var coordinator: Coordinator?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,5 +25,9 @@ class DisplayMoviesViewController: UIViewController {
     
 
 
-
+    @IBAction func testCoordinator(_ sender: Any) {
+        
+        self.coordinator?.present(.newScreen)
+    }
+    
 }
