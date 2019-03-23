@@ -39,10 +39,10 @@
                                     <constraint firstAttribute="height" constant="1" id="czd-21-968"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bCu-Aq-Eak">
-                                <rect key="frame" x="16" y="115" width="343" height="484"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bCu-Aq-Eak">
+                                <rect key="frame" x="0.0" y="99" width="375" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="20" id="R0J-C8-G9o">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="20" id="R0J-C8-G9o">
                                     <size key="itemSize" width="200" height="400"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -50,7 +50,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviesCollectionViewCell" id="w40-ia-iWB" customClass="MoviesCollectionViewCell" customModule="Movies" customModuleProvider="target">
-                                        <rect key="frame" x="61.5" y="0.0" width="200" height="400"/>
+                                        <rect key="frame" x="0.0" y="63.5" width="200" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
@@ -146,15 +146,15 @@
                             <constraint firstItem="sFb-30-4vg" firstAttribute="top" secondItem="dWV-tT-0Ek" secondAttribute="bottom" constant="8" id="CRi-JB-Hfd"/>
                             <constraint firstAttribute="bottom" secondItem="QPa-0D-Em3" secondAttribute="bottom" constant="20" symbolic="YES" id="JDa-cX-0pC"/>
                             <constraint firstItem="dWV-tT-0Ek" firstAttribute="top" secondItem="y0W-sX-2o2" secondAttribute="top" constant="15" id="KvN-Oo-b8x"/>
-                            <constraint firstItem="y0W-sX-2o2" firstAttribute="trailing" secondItem="bCu-Aq-Eak" secondAttribute="trailing" constant="16" id="Nk0-ej-6SU"/>
+                            <constraint firstItem="y0W-sX-2o2" firstAttribute="trailing" secondItem="bCu-Aq-Eak" secondAttribute="trailing" id="Nk0-ej-6SU"/>
                             <constraint firstAttribute="trailing" secondItem="sFb-30-4vg" secondAttribute="trailing" constant="16" id="Rm3-RZ-l4G"/>
                             <constraint firstItem="y0W-sX-2o2" firstAttribute="trailing" secondItem="dWV-tT-0Ek" secondAttribute="trailing" constant="16" id="Xf5-hj-kQN"/>
                             <constraint firstItem="QPa-0D-Em3" firstAttribute="leading" secondItem="y0W-sX-2o2" secondAttribute="leading" constant="16" id="cr5-hX-WKS"/>
                             <constraint firstItem="X4I-gf-NXL" firstAttribute="leading" secondItem="y0W-sX-2o2" secondAttribute="leading" constant="16" id="gYZ-bW-1dJ"/>
-                            <constraint firstItem="bCu-Aq-Eak" firstAttribute="top" secondItem="sFb-30-4vg" secondAttribute="bottom" constant="16" id="mqb-s1-wLr"/>
-                            <constraint firstItem="bCu-Aq-Eak" firstAttribute="leading" secondItem="y0W-sX-2o2" secondAttribute="leading" constant="16" id="nEs-ag-McX"/>
+                            <constraint firstItem="bCu-Aq-Eak" firstAttribute="top" secondItem="sFb-30-4vg" secondAttribute="bottom" id="mqb-s1-wLr"/>
+                            <constraint firstItem="bCu-Aq-Eak" firstAttribute="leading" secondItem="y0W-sX-2o2" secondAttribute="leading" id="nEs-ag-McX"/>
                             <constraint firstItem="X4I-gf-NXL" firstAttribute="top" secondItem="y0W-sX-2o2" secondAttribute="top" constant="15" id="npn-ve-qCE"/>
-                            <constraint firstItem="QPa-0D-Em3" firstAttribute="top" secondItem="bCu-Aq-Eak" secondAttribute="bottom" constant="27" id="rNX-yA-ovf"/>
+                            <constraint firstItem="QPa-0D-Em3" firstAttribute="top" secondItem="bCu-Aq-Eak" secondAttribute="bottom" id="rNX-yA-ovf"/>
                             <constraint firstItem="sFb-30-4vg" firstAttribute="leading" secondItem="Jzy-EF-Fag" secondAttribute="leading" constant="16" id="zFR-SN-4y3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y0W-sX-2o2"/>
