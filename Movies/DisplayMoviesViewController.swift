@@ -25,9 +25,5 @@ class DisplayMoviesViewController: UIViewController, Coordinable {
     
 
 
-    @IBAction func testCoordinator(_ sender: Any) {
-        
-        self.coordinator?.present(.newScreen)
-    }
     
 }
