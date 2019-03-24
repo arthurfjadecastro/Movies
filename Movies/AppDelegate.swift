@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+    
+    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        Movie.clearCachedImages()
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
        

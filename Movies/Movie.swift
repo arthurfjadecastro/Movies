@@ -34,7 +34,9 @@ struct Movie {
         self.synopsys = synopsys
     }
     
-    
+    static func clearCachedImages(){
+        self.imagesCache.removeAll()
+    }
     
     func image(completion: @escaping (Result<UIImage>) -> Void) {
         if let cachedImage = Movie.imagesCache[self.image.absoluteString]  {
