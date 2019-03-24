@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class MoviesDetailsViewController: UIViewController, Coordinable  {
+class MovieDetailsViewController: UIViewController, Coordinable  {
     
     var coordinator: Coordinator?
     
