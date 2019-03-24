@@ -9,99 +9,15 @@
 import Foundation
 
 
-fileprivate struct MovieModel: Decodable {
-    
-    let title: String
-    let image: String
-    let genres: [Int]
-    let synopsys: String
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.title = try container.decode(String.self, forKey: .title)
-        self.image = try container.decode(String.self, forKey: .image)
-        self.genres = try container.decode([Int].self, forKey: .genres)
-        self.synopsys = try container.decode(String.self, forKey: .synopsys)
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case title
-        case image = "poster_path"
-        case genres = "genre_ids"
-        case synopsys = "overview"
-    }
-}
 
-fileprivate struct MoviesModel: Decodable {
-    
-    let results: [MovieModel]
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.results = try container.decode([MovieModel].self, forKey: .results)
-      
-    }
-    
-    enum CodingKeys: CodingKey {
-        case results
-        
-    }
-}
-
-
-fileprivate struct GenreModel: Decodable {
-    
-    let id: Int
-    let name: String
-   
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(Int.self, forKey: .id)
-        self.name = try container.decode(String.self, forKey: .name)
-        
-    }
-    
-    enum CodingKeys: CodingKey {
-        case name
-        case id
-        
-        
-    }
-}
-
-fileprivate struct GenresModel: Decodable {
-    
-    let genres: [GenreModel]
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.genres = try container.decode([GenreModel].self, forKey: .genres)
-        
-    }
-    
-    enum CodingKeys: CodingKey {
-        case genres
-        
-    }
-    
-    
-    func asDictionary() -> [Int:String] {
-        var dictionary = [Int:String]()
-        for genre in self.genres {
-            dictionary[genre.id] = genre.name
-        }
-        return dictionary
-    }
-}
 
 
 
 fileprivate extension Movie {
-    init(movie: MovieModel, genres: [Int:String]) {
+    init(movie: TheMovieDatabaseFetcher.MovieModel, genres: [Int:String]) {
         let image = K.API.theMovieDataBaseImage.appendingPathComponent(movie.image)
         let _genres = genres.filter { (key, value) -> Bool in return movie.genres.contains(key) }.values
-        self.init(title: movie.title, image: image, genres: Array(_genres), synopsis: movie.synopsys)
+        self.init(title: movie.title, image: image, genres: Array(_genres), synopsys: movie.synopsys)
     }
 }
 
@@ -158,8 +74,125 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
     }
     
     
+    
+    
+    struct MovieModel: Decodable {
+        
+        let title: String
+        let image: String
+        let genres: [Int]
+        let synopsys: String
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.title = try container.decode(String.self, forKey: .title)
+            self.image = try container.decode(String.self, forKey: .image)
+            self.genres = try container.decode([Int].self, forKey: .genres)
+            self.synopsys = try container.decode(String.self, forKey: .synopsys)
+        }
+        
+        
+        init(title: String, image: String, genres: [Int], synopsys: String) {
+            self.title = title
+            self.image = image
+            self.genres = genres
+            self.synopsys = synopsys
+        }
+        
+        enum CodingKeys: String, CodingKey {
+            case title
+            case image = "poster_path"
+            case genres = "genre_ids"
+            case synopsys = "overview"
+        }
+    }
+    
+    
+    
+    struct MoviesModel: Decodable {
+        
+        let results: [MovieModel]
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.results = try container.decode([MovieModel].self, forKey: .results)
+            
+        }
+        
+        init(results: [MovieModel]) {
+            self.results = results
+        }
+        
+        enum CodingKeys: CodingKey {
+            case results
+            
+        }
+    }
+    
+    
+    struct GenreModel: Decodable {
+        
+        let id: Int
+        let name: String
+        
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.id = try container.decode(Int.self, forKey: .id)
+            self.name = try container.decode(String.self, forKey: .name)
+            
+        }
+        
+        enum CodingKeys: CodingKey {
+            case name
+            case id
+            
+            
+        }
+    }
+    
+    struct GenresModel: Decodable {
+        
+        let genres: [GenreModel]
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.genres = try container.decode([GenreModel].self, forKey: .genres)
+            
+        }
+        
+        enum CodingKeys: CodingKey {
+            case genres
+            
+        }
+        
+        
+        func asDictionary() -> [Int:String] {
+            var dictionary = [Int:String]()
+            for genre in self.genres {
+                dictionary[genre.id] = genre.name
+            }
+            return dictionary
+        }
+    }
+    
+    
 }
 
+extension TheMovieDatabaseFetcher.MovieModel: Equatable {
+    static func ==(lhs:TheMovieDatabaseFetcher.MovieModel, rhs:TheMovieDatabaseFetcher.MovieModel) -> Bool {
+        return lhs.title == rhs.title &&
+            lhs.image == rhs.image &&
+            lhs.genres == rhs.genres &&
+            lhs.synopsys == rhs.synopsys
+    }
+}
+
+extension TheMovieDatabaseFetcher.MoviesModel: Equatable {
+    static func ==(lhs:TheMovieDatabaseFetcher.MoviesModel, rhs:TheMovieDatabaseFetcher.MoviesModel) -> Bool {
+        return lhs.results == rhs.results
+    }
+}
 
 
 

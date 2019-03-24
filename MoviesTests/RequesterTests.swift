@@ -9,13 +9,15 @@
 import XCTest
 @testable import Movies
 
+
+
 class RequesterTests: XCTestCase {
     
     func testStringRequest(){
         let requester = Requester()
         requester.delegate = RequesterMock()
         
-        let expectation = XCTestExpectation(description: "Wait response")
+        let expectation = XCTestExpectation(description: "Wait raw string")
         requester.get(URL(string: "https://google.com.br")!, parameters: [:]) { (result) in
             switch result {
             case .success(let data):
@@ -27,9 +29,31 @@ class RequesterTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 1)
     }
+    
+    func testDecoderRequest(){
+        let requester = Requester()
+        requester.delegate = RequesterMock()
+        
+        let fakeMovieModel = TheMovieDatabaseFetcher.MovieModel(title: "Mortal Engines",
+                                                                image: "/uXJVpPXxZO4L8Rz3IG1Y8XvZJcg.jpg",
+                                                                genres: [878, 28, 12, 14, 53],
+                                                                synopsys: fakeSynopsys)
+        let fakeMoviesModel = TheMovieDatabaseFetcher.MoviesModel(results: [fakeMovieModel])
+        let expectation = XCTestExpectation(description: "Wait decodable response")
+        requester.get(URL(string: "https://google.com.br")!, parameters: [:]) { (result: Result<TheMovieDatabaseFetcher.MoviesModel>) in
+            switch result {
+            case .success(let moviesModel):
+                XCTAssertEqual(moviesModel, fakeMoviesModel)
+                expectation.fulfill()
+            case .error(_):
+                XCTFail("The requester has changed the response")
+            }
+        }
+        self.wait(for: [expectation], timeout: 1)
+    }
 
 }
-
+fileprivate let fakeSynopsys = "Many thousands of years in the future, Earth’s cities roam the globe on huge wheels, devouring each other in a struggle for ever diminishing resources. On one of these massive traction cities, the old London, Tom Natsworthy has an unexpected encounter with a mysterious young woman from the wastelands who will change the course of his life forever."
 fileprivate let fakeResponse = """
 {
 "page": 1,

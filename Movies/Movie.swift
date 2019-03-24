@@ -23,14 +23,14 @@ struct Movie {
     let title: String
     let image: URL
     let genres: [String]
-    let synopsis: String
+    let synopsys: String
     
     
-    init(title: String, image: URL, genres: [String], synopsis: String) {
+    init(title: String, image: URL, genres: [String], synopsys: String) {
         self.title = title
         self.image = image
         self.genres = genres
-        self.synopsis = synopsis
+        self.synopsys = synopsys
     }
 
 }
