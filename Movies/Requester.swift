@@ -20,21 +20,10 @@ enum RequesterError: Error {
 
 class Requester {
     
+    var delegate: RequesterDelegate = AlamofireRequester()
     
-    func get(_ url: URL, parameters: [String:String], completion: @escaping (Result<String>) -> Void ) {
-
-        Alamofire.request(url.absoluteString, method: .get, parameters: parameters).responseString { response in
-            if let error =  response.error {
-                completion(Result.error(error))
-                return
-            }
-            //Transform dynamic error in a static error.
-            guard let body = response.result.value else {
-                completion(Result.error(RequesterError.noValue("There's no result from requisition. This should be impossible. Review your code")))
-                return
-            }
-            completion(Result.success(body))
-        }
+    func get(_ url: URL, parameters: [String:String], completion: @escaping (Result<String>) -> Void) {
+        self.delegate.request(url: url, method: .get, parameters: parameters, completion: completion)
     }
     
     
