@@ -20,6 +20,7 @@ enum Genre {
 struct Movie {
     
     //MARK: - Properties
+    private static var imagesCache = [String:UIImage]()
     let title: String
     let image: URL
     let genres: [String]
@@ -31,6 +32,33 @@ struct Movie {
         self.image = image
         self.genres = genres
         self.synopsys = synopsys
+    }
+    
+    
+    
+    func image(completion: @escaping (Result<UIImage>) -> Void) {
+        if let cachedImage = Movie.imagesCache[self.image.absoluteString]  {
+            completion(Result.success(cachedImage))
+            return
+        }
+        let requester = Requester()
+        requester.get(image, parameters: [:]) { (result:Result<Data>) in
+            switch result {
+            case .error(let error):
+                completion(Result.error(error))
+            case .success(let data):
+                guard let image = UIImage(data: data) else {
+                    completion(Result.error(RequesterError.conversionFailed("The requested image isn't convertible to UIImage")))
+                    return
+                }
+                
+                Movie.imagesCache[self.image.absoluteString] = image
+                completion(Result.success(image))
+                
+                
+            }
+        }
+        
     }
 
 }

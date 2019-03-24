@@ -23,7 +23,7 @@ struct K {
             return url
         }()
         static let theMovieDataBaseImage: URL = {
-            guard let url = URL(string: "http://image.tmdb.org/t/p/w342") else {
+            guard let url = URL(string: "http://image.tmdb.org/t/p/w500") else {
                 fatalError("Unable to create image URL from path")
             }
             return url

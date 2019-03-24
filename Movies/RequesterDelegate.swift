@@ -17,18 +17,18 @@ enum RequestType {
 
 protocol RequesterDelegate {
     
-    func request(url:URL, method: RequestType, parameters: [String:String], completion: @escaping (Result<String>) -> Void)
+    func request(url:URL, method: RequestType, parameters: [String:String], completion: @escaping (Result<Data>) -> Void)
     
 }
 
 class AlamofireRequester: RequesterDelegate {
-    func request(url:URL, method: RequestType, parameters: [String:String], completion: @escaping (Result<String>) -> Void) {
+    func request(url:URL, method: RequestType, parameters: [String:String], completion: @escaping (Result<Data>) -> Void) {
         var httpMethod: HTTPMethod
         switch method {
         case .get:
             httpMethod = .get
         }
-        Alamofire.request(url.absoluteString, method: httpMethod, parameters: parameters).responseString { response in
+        Alamofire.request(url.absoluteString, method: httpMethod, parameters: parameters).responseData { response in
             if let error =  response.error {
                 completion(Result.error(error))
                 return
