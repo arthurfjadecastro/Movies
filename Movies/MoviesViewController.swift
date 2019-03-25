@@ -16,6 +16,10 @@ class MoviesViewController: UIViewController, Coordinable {
     @IBOutlet weak var tableView: UITableView!
     //MARK: - Properties
     
+    
+    
+    var id = String()
+    
     var coordinator: Coordinator?
     var movies = [Movie]()
     
@@ -29,6 +33,7 @@ class MoviesViewController: UIViewController, Coordinable {
         super.viewDidLoad()
         self.setupTableview()
         self.fetchMovies()
+        self.hero.isEnabled = true
         
   
     }
@@ -56,10 +61,6 @@ class MoviesViewController: UIViewController, Coordinable {
             }
         }
     }
-    
- 
-
-    
 }
 
 
@@ -79,10 +80,17 @@ extension MoviesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        var str = String()
         if let movieCell = cell as? MovieCell {
-            
-           movieCell.movie = self.movies[indexPath.row]
+            str = movieCell.idGenerate
+            movieCell.movie = self.movies[indexPath.row]
+           
         }
+        self.id = str
+        
+        
+        
+        
         
         return cell
     }
@@ -102,6 +110,7 @@ extension MoviesViewController: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "MovieDetails", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MovieDetails")
         (controller as? MovieDetailsViewController )?.movie = self.movies[indexPath.row]
+        (controller as? MovieDetailsViewController )?.id = self.id
             self.present(controller, animated: true, completion: nil)
     }
 }

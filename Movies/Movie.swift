@@ -12,10 +12,6 @@ import UIKit
 
 
 
-enum Genre {
-    case action
-}
-
 
 struct Movie {
     
@@ -27,11 +23,13 @@ struct Movie {
     let synopsys: String
     
     
+    
     init(title: String, image: URL, genres: [String], synopsys: String) {
         self.title = title
         self.image = image
         self.genres = genres
         self.synopsys = synopsys
+        
     }
     
     static func clearCachedImages(){

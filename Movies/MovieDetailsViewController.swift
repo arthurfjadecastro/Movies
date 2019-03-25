@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Hero
+
 
 
 class MovieDetailsViewController: UIViewController, Coordinable  {
@@ -23,6 +25,8 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     
     //MARK: - Properties
     
+    var id: String?
+    
     var movie: Movie?
     
     var coordinator: Coordinator?
@@ -33,6 +37,7 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
         super.viewDidLoad()
         self.setupCollectionView()
         self.loadMovie()
+        self.hero.isEnabled = true
         
     }
     
@@ -51,17 +56,19 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
         _attributedString.addAttribute(NSAttributedString.Key.kern, value: 1, range: NSRange(location: 0, length: _attributedString.length - 1))
         
         self.synopsysLabel.attributedText = _attributedString
-
-
+        
+        
         self.titleLabel.text = self.movie?.title
         
-        
+       
         self.movie?.image(completion: { (result) in
+            
             switch result {
             case .error(let error):
                 self.present(error)
             case .success(let image):
-                 self.posterImage.image = image
+                self.posterImage.hero.id = self.id
+                self.posterImage.image = image
             }
         })
     }

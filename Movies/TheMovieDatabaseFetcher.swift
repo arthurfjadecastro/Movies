@@ -82,6 +82,7 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
         let image: String
         let genres: [Int]
         let synopsys: String
+
         
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)

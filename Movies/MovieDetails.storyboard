@@ -33,29 +33,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="755-IA-C0i">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="842"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="841"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triple" translatesAutoresizingMaskIntoConstraints="NO" id="vkS-ZR-dRc">
-                                                <rect key="frame" x="0.0" y="1" width="375" height="562.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="562.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="vkS-ZR-dRc" secondAttribute="height" multiplier="375: 562.5" id="9KW-Qt-cY5"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triple Frontier" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-sq-O0K">
-                                                <rect key="frame" x="16" y="599" width="343" height="37"/>
+                                                <rect key="frame" x="16" y="598" width="343" height="37"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="31"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.57999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9f-Tg-isE">
-                                                <rect key="frame" x="16" y="696" width="343" height="100.5"/>
+                                                <rect key="frame" x="16" y="695" width="343" height="100.5"/>
                                                 <string key="text">As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless’ discovery of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and Hiccup’s reign as village chief is tested, both dragon and rider must make impossible decisions to save their kind.</string>
                                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.57999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hTp-79-FV4">
-                                                <rect key="frame" x="16" y="654" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="653" width="343" height="17"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="NVe-VY-0Vg"/>
@@ -126,7 +126,7 @@
                                             <constraint firstItem="l0L-KG-uiW" firstAttribute="centerY" secondItem="Yb0-Go-gtI" secondAttribute="centerY" constant="-1.5" id="3vx-gr-wCb"/>
                                             <constraint firstItem="Q9f-Tg-isE" firstAttribute="top" secondItem="hTp-79-FV4" secondAttribute="bottom" constant="25" id="5Kj-z3-OFJ"/>
                                             <constraint firstItem="hTp-79-FV4" firstAttribute="leading" secondItem="755-IA-C0i" secondAttribute="leading" constant="16" id="9xB-JZ-a4l"/>
-                                            <constraint firstItem="vkS-ZR-dRc" firstAttribute="top" secondItem="755-IA-C0i" secondAttribute="top" constant="1" id="Jot-qo-5Wv"/>
+                                            <constraint firstItem="vkS-ZR-dRc" firstAttribute="top" secondItem="755-IA-C0i" secondAttribute="top" id="Jot-qo-5Wv"/>
                                             <constraint firstItem="Yb0-Go-gtI" firstAttribute="top" secondItem="755-IA-C0i" secondAttribute="top" constant="28" id="MwF-QY-vOz"/>
                                             <constraint firstItem="Q9f-Tg-isE" firstAttribute="leading" secondItem="755-IA-C0i" secondAttribute="leading" constant="16" id="Ni3-cZ-JMc"/>
                                             <constraint firstItem="hTp-79-FV4" firstAttribute="top" secondItem="RgQ-sq-O0K" secondAttribute="bottom" constant="18" id="V9Y-KF-Ixw"/>
@@ -165,6 +165,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="842"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="genresCollection" destination="hTp-79-FV4" id="stp-eI-CA9"/>
                         <outlet property="posterImage" destination="vkS-ZR-dRc" id="OTn-I6-xnP"/>
