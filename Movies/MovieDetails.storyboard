@@ -35,11 +35,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="755-IA-C0i">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="841"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triple" translatesAutoresizingMaskIntoConstraints="NO" id="vkS-ZR-dRc">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triple" translatesAutoresizingMaskIntoConstraints="NO" id="vkS-ZR-dRc">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="562.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="vkS-ZR-dRc" secondAttribute="height" multiplier="375: 562.5" id="9KW-Qt-cY5"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triple Frontier" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-sq-O0K">
                                                 <rect key="frame" x="16" y="598" width="343" height="37"/>

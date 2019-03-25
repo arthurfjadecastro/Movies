@@ -29,8 +29,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="512.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triple" translatesAutoresizingMaskIntoConstraints="NO" id="LFd-VW-Jtn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LFd-VW-Jtn">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="480.5"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AC-sp-Fql" userLabel="SpaceView">
                                                     <rect key="frame" x="0.0" y="480.5" width="343" height="32"/>
@@ -46,6 +51,11 @@
                                                 <constraint firstItem="7AC-sp-Fql" firstAttribute="leading" secondItem="sfd-ZK-T8g" secondAttribute="leading" id="EkV-fD-kOV"/>
                                                 <constraint firstAttribute="trailing" secondItem="7AC-sp-Fql" secondAttribute="trailing" id="dPs-1U-jac"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="7AC-sp-Fql" firstAttribute="height" secondItem="Vgk-cE-ELJ" secondAttribute="height" multiplier="34 / 547" id="t57-0V-9eL"/>
@@ -78,7 +88,4 @@
             <point key="canvasLocation" x="-39.200000000000003" y="76.911544227886068"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="triple" width="375" height="563"/>
-    </resources>
 </document>
