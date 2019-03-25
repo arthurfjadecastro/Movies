@@ -31,16 +31,39 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     
     var coordinator: Coordinator?
     
-    
+    var panGesture = UIPanGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
         self.loadMovie()
         self.hero.isEnabled = true
+        self.setupGesture()
         
+  
     }
     
+    func setupGesture(){
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gestureRecognizer:)))
+        self.view.addGestureRecognizer(panGesture)
+    }
+ 
+    
+    @objc func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
+        switch self.panGesture.state {
+        case .began:
+            self.dismiss(animated: true, completion: nil)
+        case .changed:
+            let translation = panGesture.translation(in: nil)
+            let progress = translation.y / 2 / self.view.bounds.height
+            let imagePosition = CGPoint(x: self.posterImage.center.x, y: translation.y + self.posterImage.center.y)
+            Hero.shared.update(progress)
+            Hero.shared.apply(modifiers: [.position(imagePosition)], to: self.posterImage)
+        default:
+            Hero.shared.finish()
+        }
+        
+    }
     
     
     func setupCollectionView(){
@@ -99,8 +122,14 @@ extension MovieDetailsViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    
+   
 
 }
+
+
+
 
 
 

@@ -13,9 +13,6 @@
         <array key="SF-Pro-Text-Bold.otf">
             <string>SFProText-Bold</string>
         </array>
-        <array key="SF-Pro-Text-Heavy.otf">
-            <string>SFProText-Heavy</string>
-        </array>
         <array key="SF-Pro-Text-Medium.otf">
             <string>SFProText-Medium</string>
         </array>
@@ -29,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4t-Jt-NUT">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4t-Jt-NUT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="755-IA-C0i">
@@ -60,31 +57,31 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hTp-79-FV4">
-                                                <rect key="frame" x="16" y="653" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="653" width="343" height="24"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="17" id="NVe-VY-0Vg"/>
+                                                    <constraint firstAttribute="height" constant="24" id="NVe-VY-0Vg"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F8o-E0-5xu">
-                                                    <size key="itemSize" width="62" height="17"/>
+                                                    <size key="itemSize" width="74" height="23"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="genreCell" id="ZJm-1H-x7N" customClass="GenreCell" customModule="Movies" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="74" height="23"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="62" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="23"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yn9-1Q-RN2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="74" height="23"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-Sx-VvL">
-                                                                            <rect key="frame" x="10" y="2.5" width="42" height="12"/>
-                                                                            <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="10"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="ACTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-Sx-VvL">
+                                                                            <rect key="frame" x="10" y="5.5" width="54" height="12"/>
+                                                                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="10"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -96,6 +93,11 @@
                                                                         <constraint firstItem="QDs-Sx-VvL" firstAttribute="centerY" secondItem="yn9-1Q-RN2" secondAttribute="centerY" id="TUA-GK-oNJ"/>
                                                                         <constraint firstItem="QDs-Sx-VvL" firstAttribute="leading" secondItem="yn9-1Q-RN2" secondAttribute="leading" constant="10" id="q22-Je-ztR"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </view>
                                                             </subviews>
                                                         </view>
@@ -105,6 +107,11 @@
                                                             <constraint firstItem="yn9-1Q-RN2" firstAttribute="leading" secondItem="ZJm-1H-x7N" secondAttribute="leading" id="TRA-8T-7G2"/>
                                                             <constraint firstAttribute="trailing" secondItem="yn9-1Q-RN2" secondAttribute="trailing" id="vr4-jG-1rF"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <outlet property="genreLabel" destination="QDs-Sx-VvL" id="1Yb-Jt-Mbb"/>
                                                         </connections>
@@ -129,7 +136,7 @@
                                         <constraints>
                                             <constraint firstItem="RgQ-sq-O0K" firstAttribute="leading" secondItem="755-IA-C0i" secondAttribute="leading" constant="16" id="2fV-H5-mSs"/>
                                             <constraint firstItem="l0L-KG-uiW" firstAttribute="centerY" secondItem="Yb0-Go-gtI" secondAttribute="centerY" constant="-1.5" id="3vx-gr-wCb"/>
-                                            <constraint firstItem="Q9f-Tg-isE" firstAttribute="top" secondItem="hTp-79-FV4" secondAttribute="bottom" constant="25" id="5Kj-z3-OFJ"/>
+                                            <constraint firstItem="Q9f-Tg-isE" firstAttribute="top" secondItem="hTp-79-FV4" secondAttribute="bottom" constant="18" id="5Kj-z3-OFJ"/>
                                             <constraint firstItem="hTp-79-FV4" firstAttribute="leading" secondItem="755-IA-C0i" secondAttribute="leading" constant="16" id="9xB-JZ-a4l"/>
                                             <constraint firstItem="vkS-ZR-dRc" firstAttribute="top" secondItem="755-IA-C0i" secondAttribute="top" id="Jot-qo-5Wv"/>
                                             <constraint firstItem="Yb0-Go-gtI" firstAttribute="top" secondItem="755-IA-C0i" secondAttribute="top" constant="28" id="MwF-QY-vOz"/>
