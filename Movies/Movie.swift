@@ -53,14 +53,9 @@ struct Movie {
                     completion(Result.error(RequesterError.conversionFailed("The requested image isn't convertible to UIImage")))
                     return
                 }
-                
                 Movie.imagesCache[self.image.absoluteString] = image
                 completion(Result.success(image))
-                
-                
             }
         }
-        
     }
-
 }

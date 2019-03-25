@@ -38,7 +38,7 @@ class MoviesViewController: UIViewController, Coordinable {
         let width = K.LayoutCell.widthInRelationToTableView * tableView.frame.size.width
         let height = K.LayoutCell.heightInRelationToWidth * width
         self.tableView.rowHeight = height
-        
+        self.tableView.delegate = self
         self.tableView.dataSource = self
         
     }
@@ -90,10 +90,20 @@ extension MoviesViewController: UITableViewDataSource {
     
     
     
+    
+    
 }
 
 
-
+extension MoviesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "MovieDetails", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MovieDetails")
+        (controller as? MovieDetailsViewController )?.movie = self.movies[indexPath.row]
+            self.present(controller, animated: true, completion: nil)
+    }
+}
 
 
 

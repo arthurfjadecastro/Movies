@@ -55,7 +55,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="512.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie01.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="LFd-VW-Jtn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triple" translatesAutoresizingMaskIntoConstraints="NO" id="LFd-VW-Jtn">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="480.5"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AC-sp-Fql" userLabel="SpaceView">
@@ -102,6 +102,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="movie01.jpeg" width="200" height="200"/>
+        <image name="triple" width="375" height="563"/>
     </resources>
 </document>

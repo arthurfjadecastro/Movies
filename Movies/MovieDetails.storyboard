@@ -9,35 +9,156 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Heavy.otf">
+            <string>SFProText-Heavy</string>
+        </array>
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Movies Details View Controller-->
+        <!--Movie Details View Controller-->
         <scene sceneID="F9Q-lj-uLs">
             <objects>
-                <viewController storyboardIdentifier="MovieDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rAf-ea-EhH" customClass="MoviesDetailsViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rAf-ea-EhH" customClass="MovieDetailsViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TxJ-Z1-BzO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txh-Wq-LAs">
-                                <rect key="frame" x="108" y="106" width="158" height="257"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.73677240310000003" green="1" blue="0.32153329629999999" alpha="0.38160211267605632" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="MovieDetails">
-                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnBack:" destination="rAf-ea-EhH" eventType="touchUpInside" id="rq0-KY-VQv"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4t-Jt-NUT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="842"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="755-IA-C0i">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="842"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triple" translatesAutoresizingMaskIntoConstraints="NO" id="vkS-ZR-dRc">
+                                                <rect key="frame" x="0.0" y="1" width="375" height="562.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vkS-ZR-dRc" secondAttribute="height" multiplier="375: 562.5" id="9KW-Qt-cY5"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triple Frontier" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-sq-O0K">
+                                                <rect key="frame" x="16" y="599" width="343" height="37"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="31"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.57999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9f-Tg-isE">
+                                                <rect key="frame" x="16" y="696" width="343" height="100.5"/>
+                                                <string key="text">As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless’ discovery of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and Hiccup’s reign as village chief is tested, both dragon and rider must make impossible decisions to save their kind.</string>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.57999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hTp-79-FV4">
+                                                <rect key="frame" x="16" y="654" width="343" height="17"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="NVe-VY-0Vg"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F8o-E0-5xu">
+                                                    <size key="itemSize" width="62" height="17"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="genreCell" id="ZJm-1H-x7N" customClass="GenreCell" customModule="Movies" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="62" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yn9-1Q-RN2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="17"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="ACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-Sx-VvL">
+                                                                            <rect key="frame" x="10" y="2.5" width="42" height="12"/>
+                                                                            <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="10"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="QDs-Sx-VvL" firstAttribute="centerX" secondItem="yn9-1Q-RN2" secondAttribute="centerX" id="Q34-wR-HhT"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="QDs-Sx-VvL" secondAttribute="trailing" constant="10" id="TG4-ZU-J4Z"/>
+                                                                        <constraint firstItem="QDs-Sx-VvL" firstAttribute="centerY" secondItem="yn9-1Q-RN2" secondAttribute="centerY" id="TUA-GK-oNJ"/>
+                                                                        <constraint firstItem="QDs-Sx-VvL" firstAttribute="leading" secondItem="yn9-1Q-RN2" secondAttribute="leading" constant="10" id="q22-Je-ztR"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="yn9-1Q-RN2" firstAttribute="top" secondItem="ZJm-1H-x7N" secondAttribute="top" id="Chy-ok-ueC"/>
+                                                            <constraint firstAttribute="bottom" secondItem="yn9-1Q-RN2" secondAttribute="bottom" id="DVn-S2-Bx6"/>
+                                                            <constraint firstItem="yn9-1Q-RN2" firstAttribute="leading" secondItem="ZJm-1H-x7N" secondAttribute="leading" id="TRA-8T-7G2"/>
+                                                            <constraint firstAttribute="trailing" secondItem="yn9-1Q-RN2" secondAttribute="trailing" id="vr4-jG-1rF"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="genreLabel" destination="QDs-Sx-VvL" id="1Yb-Jt-Mbb"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="RgQ-sq-O0K" firstAttribute="leading" secondItem="755-IA-C0i" secondAttribute="leading" constant="16" id="2fV-H5-mSs"/>
+                                            <constraint firstItem="Q9f-Tg-isE" firstAttribute="top" secondItem="hTp-79-FV4" secondAttribute="bottom" constant="25" id="5Kj-z3-OFJ"/>
+                                            <constraint firstItem="hTp-79-FV4" firstAttribute="leading" secondItem="755-IA-C0i" secondAttribute="leading" constant="16" id="9xB-JZ-a4l"/>
+                                            <constraint firstItem="vkS-ZR-dRc" firstAttribute="top" secondItem="755-IA-C0i" secondAttribute="top" constant="1" id="Jot-qo-5Wv"/>
+                                            <constraint firstItem="Q9f-Tg-isE" firstAttribute="leading" secondItem="755-IA-C0i" secondAttribute="leading" constant="16" id="Ni3-cZ-JMc"/>
+                                            <constraint firstItem="hTp-79-FV4" firstAttribute="top" secondItem="RgQ-sq-O0K" secondAttribute="bottom" constant="18" id="V9Y-KF-Ixw"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q9f-Tg-isE" secondAttribute="trailing" constant="16" id="Wbs-Gy-Fqy"/>
+                                            <constraint firstItem="vkS-ZR-dRc" firstAttribute="leading" secondItem="755-IA-C0i" secondAttribute="leading" id="apf-Zg-Y19"/>
+                                            <constraint firstAttribute="bottom" secondItem="Q9f-Tg-isE" secondAttribute="bottom" constant="45.5" id="dbZ-kj-ZyQ"/>
+                                            <constraint firstItem="RgQ-sq-O0K" firstAttribute="top" secondItem="vkS-ZR-dRc" secondAttribute="bottom" constant="35.5" id="q6V-0U-gew"/>
+                                            <constraint firstAttribute="trailing" secondItem="vkS-ZR-dRc" secondAttribute="trailing" id="qto-ya-Mn0"/>
+                                            <constraint firstAttribute="trailing" secondItem="hTp-79-FV4" secondAttribute="trailing" constant="16" id="tJs-sE-wNL"/>
+                                            <constraint firstAttribute="trailing" secondItem="RgQ-sq-O0K" secondAttribute="trailing" constant="16" id="zx1-xM-dwH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="755-IA-C0i" secondAttribute="trailing" id="49P-Vb-gcB"/>
+                                    <constraint firstItem="755-IA-C0i" firstAttribute="leading" secondItem="f4t-Jt-NUT" secondAttribute="leading" id="El4-Aj-k3R"/>
+                                    <constraint firstItem="755-IA-C0i" firstAttribute="height" secondItem="f4t-Jt-NUT" secondAttribute="height" priority="250" id="K1I-TF-rtF"/>
+                                    <constraint firstItem="755-IA-C0i" firstAttribute="top" secondItem="f4t-Jt-NUT" secondAttribute="top" id="bW8-kK-rbK"/>
+                                    <constraint firstItem="755-IA-C0i" firstAttribute="width" secondItem="f4t-Jt-NUT" secondAttribute="width" id="f5v-W7-i7t"/>
+                                    <constraint firstAttribute="bottom" secondItem="755-IA-C0i" secondAttribute="bottom" id="tyr-ym-FZw"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="0.35401078345070425" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f4t-Jt-NUT" firstAttribute="leading" secondItem="RW7-cL-tnk" secondAttribute="leading" id="3ll-CL-gV5"/>
+                            <constraint firstItem="RW7-cL-tnk" firstAttribute="trailing" secondItem="f4t-Jt-NUT" secondAttribute="trailing" id="5sG-ms-dVL"/>
+                            <constraint firstItem="f4t-Jt-NUT" firstAttribute="top" secondItem="TxJ-Z1-BzO" secondAttribute="top" id="Cfx-tv-sMv"/>
+                            <constraint firstItem="RW7-cL-tnk" firstAttribute="bottom" secondItem="f4t-Jt-NUT" secondAttribute="bottom" id="vq7-dl-o7H"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RW7-cL-tnk"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="842"/>
+                    <connections>
+                        <outlet property="genresCollection" destination="hTp-79-FV4" id="stp-eI-CA9"/>
+                        <outlet property="posterImage" destination="vkS-ZR-dRc" id="OTn-I6-xnP"/>
+                        <outlet property="synopsysLabel" destination="Q9f-Tg-isE" id="4Us-Qi-pw8"/>
+                        <outlet property="titleLabel" destination="RgQ-sq-O0K" id="tPO-a2-Zwr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAT-X2-o23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242.40000000000001" y="-16.641679160419791"/>
+            <point key="canvasLocation" x="-248.80000000000001" y="-15.292353823088456"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="triple" width="375" height="563"/>
+    </resources>
 </document>
