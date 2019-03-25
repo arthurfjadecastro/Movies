@@ -41,10 +41,21 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     func setupCollectionView(){
         self.genresCollection.dataSource = self
     }
-    
+        
     func loadMovie(){
-        self.synopsysLabel.text = self.movie?.synopsys
+        
+        let _attributedString = NSMutableAttributedString(string: self.movie?.synopsys ?? "")
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        _attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, _attributedString.length))
+        _attributedString.addAttribute(NSAttributedString.Key.kern, value: 1, range: NSRange(location: 0, length: _attributedString.length - 1))
+        
+        self.synopsysLabel.attributedText = _attributedString
+
+
         self.titleLabel.text = self.movie?.title
+        
+        
         self.movie?.image(completion: { (result) in
             switch result {
             case .error(let error):
@@ -77,9 +88,10 @@ extension MovieDetailsViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
-    
-    
-    
+
 }
+
+
+
+
+
