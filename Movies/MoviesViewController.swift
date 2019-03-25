@@ -98,6 +98,7 @@ extension MoviesViewController: UITableViewDataSource {
 extension MoviesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.coordinator?.present(.movieDetails)
         let storyboard = UIStoryboard(name: "MovieDetails", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MovieDetails")
         (controller as? MovieDetailsViewController )?.movie = self.movies[indexPath.row]

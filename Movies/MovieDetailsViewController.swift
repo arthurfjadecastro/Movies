@@ -41,7 +41,7 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     func setupCollectionView(){
         self.genresCollection.dataSource = self
     }
-        
+    
     func loadMovie(){
         
         let _attributedString = NSMutableAttributedString(string: self.movie?.synopsys ?? "")
@@ -69,8 +69,12 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     
     
     @IBAction func handleBack(_ sender: Any) {
-        self.coordinator?.present(.displayMovies)
+        self.dismiss(animated: true, completion: nil)
+//        self.coordinator?.dismiss()
     }
+    
+    
+    
 }
 
 
