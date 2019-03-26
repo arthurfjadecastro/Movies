@@ -17,9 +17,6 @@ class MoviesViewController: UIViewController, Coordinable {
     //MARK: - Properties
     
     
-    
-    var id = String()
-    
     var coordinator: Coordinator?
     var movies = [Movie]()
     
@@ -33,8 +30,6 @@ class MoviesViewController: UIViewController, Coordinable {
         super.viewDidLoad()
         self.setupTableview()
         self.fetchMovies()
-        
-  
     }
     
     
@@ -112,7 +107,6 @@ extension MoviesViewController: UITableViewDelegate {
             }
             movieDetailsController.movie = self.movies[indexPath.row]
         })
-   
     }
 }
 

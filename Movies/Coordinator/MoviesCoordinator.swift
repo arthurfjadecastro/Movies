@@ -59,7 +59,7 @@ class MoviesCoordinator: Coordinator {
     
     func present(with current: UIViewController,and next: UIViewController) {
          
-            next.modalTransitionStyle = .crossDissolve
+//            next.modalTransitionStyle = .crossDissolve
             current.present(next, animated: true, completion: nil)
         
         

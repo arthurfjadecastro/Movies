@@ -33,11 +33,21 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupCollectionView()
-        self.loadMovie()
         self.hero.isEnabled = true
         self.posterImage.hero.id = self.movie?.image.absoluteString
+        self.setupCollectionView()
+        self.performTaskMainQueue {
+            self.loadMovie()
+        }
+        
+        
 
+    }
+    
+    func performTaskMainQueue(task: @escaping ()-> ()) {
+        DispatchQueue.main.async {
+            task()
+        }
     }
 
 
@@ -97,6 +107,9 @@ extension MovieDetailsViewController: UICollectionViewDataSource {
    
 
 }
+
+
+
 
 
 

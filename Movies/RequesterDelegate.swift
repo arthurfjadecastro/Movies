@@ -28,18 +28,20 @@ class AlamofireRequester: RequesterDelegate {
         case .get:
             httpMethod = .get
         }
-        Alamofire.request(url.absoluteString, method: httpMethod, parameters: parameters).responseData { response in
-            if let error =  response.error {
-                completion(Result.error(error))
-                return
+      
+            Alamofire.request(url.absoluteString, method: httpMethod, parameters: parameters).responseData { response in
+                
+                if let error =  response.error {
+                    completion(Result.error(error))
+                    return
+                }
+                
+                //Transform dynamic error in a static error.
+                guard let body = response.result.value else {
+                    completion(Result.error(RequesterError.noValue("There's no result from requisition. This should be impossible. Review your code")))
+                    return
+                }
+                completion(Result.success(body))
             }
-            //Transform dynamic error in a static error.
-            guard let body = response.result.value else {
-                completion(Result.error(RequesterError.noValue("There's no result from requisition. This should be impossible. Review your code")))
-                return
-            }
-            completion(Result.success(body))
-        }
-        
     }
 }
