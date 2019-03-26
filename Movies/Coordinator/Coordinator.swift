@@ -17,7 +17,7 @@ protocol Coordinator {
     
     init(current: UIViewController)
     
-    func present(_ display: Display)
+    func present(_ display: Display, beforePresenting: ((UIViewController) -> Void)?)
     
     func dismiss()
     

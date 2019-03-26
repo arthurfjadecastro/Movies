@@ -33,7 +33,6 @@ class MoviesViewController: UIViewController, Coordinable {
         super.viewDidLoad()
         self.setupTableview()
         self.fetchMovies()
-        self.hero.isEnabled = true
         
   
     }
@@ -80,13 +79,13 @@ extension MoviesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        var str = String()
         if let movieCell = cell as? MovieCell {
-            str = movieCell.idGenerate
-            movieCell.movie = self.movies[indexPath.row]
+            let _movie = self.movies[indexPath.row]
+            movieCell.movie = _movie
+            movieCell.posterImage.hero.id = _movie.image.absoluteString
            
         }
-        self.id = str
+        
         
         
         
@@ -106,12 +105,14 @@ extension MoviesViewController: UITableViewDataSource {
 extension MoviesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.coordinator?.present(.movieDetails)
-        let storyboard = UIStoryboard(name: "MovieDetails", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MovieDetails")
-        (controller as? MovieDetailsViewController )?.movie = self.movies[indexPath.row]
-        (controller as? MovieDetailsViewController )?.id = self.id
-            self.present(controller, animated: true, completion: nil)
+        self.coordinator?.present(.movieDetails, beforePresenting: { controller in
+            guard let movieDetailsController = controller as? MovieDetailsViewController else {
+                assertionFailure("The next controller must be of type MovieDetailsViewController")
+                return
+            }
+            movieDetailsController.movie = self.movies[indexPath.row]
+        })
+   
     }
 }
 

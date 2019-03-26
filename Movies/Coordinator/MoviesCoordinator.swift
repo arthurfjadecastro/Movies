@@ -18,9 +18,10 @@ class MoviesCoordinator: Coordinator {
         self.currentController = current
     }
     
-    func present(_ display: Display) {
+    func present(_ display: Display, beforePresenting: ((UIViewController) -> Void)?) {
     
-        self.presentController(display)
+        self.presentController(display, beforePresenting: beforePresenting)
+        
     }
     
     func dismiss() {
@@ -34,7 +35,7 @@ class MoviesCoordinator: Coordinator {
     static func installCoordinator(){
         ///Load first viewcontroller
         guard var _initialController = UIApplication.shared.windows.first?.rootViewController as? (Coordinable & UIViewController) else {
-            assertionFailure("fail when try capture first controller")
+            assertionFailure("Fail when try capture first controller")
             return
             
         }
@@ -42,15 +43,17 @@ class MoviesCoordinator: Coordinator {
     }
     
     typealias CoordinableController = UIViewController & Coordinable
-    fileprivate func presentController(_ display: Display  ) {
+    fileprivate func presentController(_ display: Display, beforePresenting: ((UIViewController) -> Void)?  ) {
+        
         let _storyBoard = UIStoryboard(name: display.storyboard, bundle: nil)
         let _controller = _storyBoard.instantiateViewController(withIdentifier: display.controller)
         guard var _nextController = _controller as? CoordinableController else {
-            assertionFailure("fail capture next controller")
+            assertionFailure("Fail capture next controller")
             return
         }
         let _coordinator = MoviesCoordinator(current: _nextController)
         _nextController.coordinator = _coordinator
+        beforePresenting?(_nextController)
         self.present(with: self.currentController, and: _nextController)
     }
     

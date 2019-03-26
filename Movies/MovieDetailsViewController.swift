@@ -25,47 +25,22 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     
     //MARK: - Properties
     
-    var id: String?
-    
     var movie: Movie?
     
     var coordinator: Coordinator?
     
-    var panGesture = UIPanGestureRecognizer()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
         self.loadMovie()
         self.hero.isEnabled = true
-        self.setupGesture()
-        
-  
+        self.posterImage.hero.id = self.movie?.image.absoluteString
+
     }
-    
-    func setupGesture(){
-        panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gestureRecognizer:)))
-        self.view.addGestureRecognizer(panGesture)
-    }
- 
-    
-    @objc func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
-        switch self.panGesture.state {
-        case .began:
-            self.dismiss(animated: true, completion: nil)
-        case .changed:
-            let translation = panGesture.translation(in: nil)
-            let progress = translation.y / 2 / self.view.bounds.height
-            let imagePosition = CGPoint(x: self.posterImage.center.x, y: translation.y + self.posterImage.center.y)
-            Hero.shared.update(progress)
-            Hero.shared.apply(modifiers: [.position(imagePosition)], to: self.posterImage)
-        default:
-            Hero.shared.finish()
-        }
-        
-    }
-    
-    
+
+
     func setupCollectionView(){
         self.genresCollection.dataSource = self
     }
@@ -79,18 +54,14 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
         _attributedString.addAttribute(NSAttributedString.Key.kern, value: 1, range: NSRange(location: 0, length: _attributedString.length - 1))
         
         self.synopsysLabel.attributedText = _attributedString
-        
-        
         self.titleLabel.text = self.movie?.title
-        
-       
+        self.posterImage.image = nil
         self.movie?.image(completion: { (result) in
             
             switch result {
             case .error(let error):
                 self.present(error)
             case .success(let image):
-                self.posterImage.hero.id = self.id
                 self.posterImage.image = image
             }
         })
@@ -99,8 +70,7 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     
     
     @IBAction func handleBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-//        self.coordinator?.dismiss()
+        self.coordinator?.dismiss()
     }
     
     
