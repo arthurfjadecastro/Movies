@@ -18,6 +18,8 @@ enum RequesterError: Error {
 ///Class responsible for managing requests
 class Requester {
     
+    
+    ///This delegate created  data mocks - unit test
     var delegate: RequesterDelegate = AlamofireRequester()
     
     /**

@@ -34,15 +34,15 @@ extension UIView {
     ///Inspected layer where shadowColor is changed via storyboard
     @IBInspectable var shadowColor: UIColor? {
         get {
-            guard let color = self.layer.shadowColor else { return nil }
-            return UIColor(cgColor: color)
+            guard let _color = self.layer.shadowColor else { return nil }
+            return UIColor(cgColor: _color)
         }
         set{
-            guard let color = newValue else {
+            guard let _color = newValue else {
                 assertionFailure("Could not capture new color ")
                 return
             }
-            self.layer.shadowColor = color.cgColor
+            self.layer.shadowColor = _color.cgColor
         }
     }
     

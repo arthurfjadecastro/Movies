@@ -16,11 +16,8 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     
     //MARK: - IBO
     @IBOutlet weak var posterImage: UIImageView!
-    
     @IBOutlet weak var synopsysLabel: UILabel!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var genresCollection: UICollectionView!
     
     //MARK: - Properties

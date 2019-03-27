@@ -13,18 +13,16 @@ import UIKit
 
 class MoviesViewController: UIViewController, Coordinable {
     
+    
+    //MARK: - IBO
     @IBOutlet weak var tableView: UITableView!
+    
+    
     //MARK: - Properties
-    
-    @IBOutlet weak var navBar: UINavigationBar!
-    
     var coordinator: Coordinator?
     var movies = [Movie]()
     
     
-    //MARK: - IBO
-    
-  
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -34,25 +32,25 @@ class MoviesViewController: UIViewController, Coordinable {
 
     }
     
-    
+    ///Initial setup in TableView Movies
     func setupTableview(){
-        let width = K.LayoutCell.widthInRelationToTableView * tableView.frame.size.width
-        let height = K.LayoutCell.heightInRelationToWidth * width
-        self.tableView.rowHeight = height
+        let _width = K.LayoutCell.widthInRelationToTableView * tableView.frame.size.width
+        let _height = K.LayoutCell.heightInRelationToWidth * _width
+        self.tableView.rowHeight = _height
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
     }
     
-    
+    ///
     func fetchMovies(){
         let fetcher = MoviesFetcherFactory.default
         fetcher.fetch { (result) in
             switch result {
-            case .error(let error):
-                self.present(error)
-            case .success(let movies):
-                self.movies = movies
+            case .error(let _error):
+                self.present(_error)
+            case .success(let _movies):
+                self.movies = _movies
                 self.tableView.reloadData()
             }
         }
@@ -64,6 +62,7 @@ class MoviesViewController: UIViewController, Coordinable {
 //MARK: - UITableViewDataSource
 
 extension MoviesViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movies.count
     }
@@ -71,8 +70,6 @@ extension MoviesViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -82,20 +79,8 @@ extension MoviesViewController: UITableViewDataSource {
             movieCell.posterImage.hero.id = _movie.image.absoluteString
            
         }
-        
-        
-        
-        
-        
-        
         return cell
     }
-    
-    
-    
-    
-    
-    
 }
 
 
@@ -103,11 +88,11 @@ extension MoviesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.coordinator?.present(.movieDetails, beforePresenting: { controller in
-            guard let movieDetailsController = controller as? MovieDetailsViewController else {
+            guard let _movieDetailsController = controller as? MovieDetailsViewController else {
                 assertionFailure("The next controller must be of type MovieDetailsViewController")
                 return
             }
-            movieDetailsController.movie = self.movies[indexPath.row]
+            _movieDetailsController.movie = self.movies[indexPath.row]
         })
     }
 }

@@ -218,9 +218,9 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
 
 fileprivate extension Movie {
     init(movie: TheMovieDatabaseFetcher.MovieModel, genres: [Int:String]) {
-        let image = K.API.theMovieDataBaseImage.appendingPathComponent(movie.image)
+        let _image = K.API.theMovieDataBaseImage.appendingPathComponent(movie.image)
         let _genres = genres.filter { (key, value) -> Bool in return movie.genres.contains(key) }.values
-        self.init(title: movie.title, image: image, genres: Array(_genres), synopsys: movie.synopsys)
+        self.init(title: movie.title, image: _image, genres: Array(_genres), synopsys: movie.synopsys)
     }
 }
 

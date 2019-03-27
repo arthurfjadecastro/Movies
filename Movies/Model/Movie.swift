@@ -67,15 +67,15 @@ struct Movie {
         let _requester = Requester()
         _requester.get(image, parameters: [:]) { (result:Result<Data>) in
             switch result {
-            case .error(let error):
-                completion(Result.error(error))
-            case .success(let data):
-                guard let image = UIImage(data: data) else {
+            case .error(let _error):
+                completion(Result.error(_error))
+            case .success(let _data):
+                guard let _image = UIImage(data: _data) else {
                     completion(Result.error(RequesterError.conversionFailed("The requested image isn't convertible to UIImage")))
                     return
                 }
-                Movie.imagesCache[self.image.absoluteString] = image
-                completion(Result.success(image))
+                Movie.imagesCache[self.image.absoluteString] = _image
+                completion(Result.success(_image))
             }
         }
     }
