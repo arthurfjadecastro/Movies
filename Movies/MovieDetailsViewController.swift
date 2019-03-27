@@ -66,6 +66,7 @@ class MovieDetailsViewController: UIViewController, Coordinable  {
     
     ///Method responsible for loading the data into the visual attributes on the details screen
     func loadMovie(){
+        self.setupInTextSynopsys()
         self.synopsysLabel.attributedText = self.attributedString
         self.titleLabel.text = self.movie?.title
         self.posterImage.image = nil
