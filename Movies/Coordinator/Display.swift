@@ -17,11 +17,15 @@ struct Display {
     
     
     
-    ///Add Calling Screens
+    /**
+        Add Calling Screens - Sequence in flow
+    */
+    
+    ///First ViewController
     static let movies = Display(controller: "Movies", storyboard: "Movies")
-    
-    
+    ///Second ViewController
     static let movieDetails = Display(controller: "MovieDetails", storyboard: "MovieDetails")
+    ///
     
     
     

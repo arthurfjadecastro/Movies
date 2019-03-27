@@ -1,6 +1,6 @@
 //
-//  MoviesConcern.swift
-//  Movies
+//  Movie.swift
+//
 //
 //  Created by Arthur Castro on 22/03/19.
 //  Copyright © 2019 Arthur Castro. All rights reserved.
@@ -8,9 +8,6 @@
 
 import Foundation
 import UIKit
-
-
-
 
 /**
  # Movie
@@ -38,7 +35,6 @@ struct Movie {
     ///Property equivalent to the movie description
     let synopsys: String
     
-    
     //MARK: - Initializer
     
     init(title: String, image: URL, genres: [String], synopsys: String) {
@@ -46,27 +42,30 @@ struct Movie {
         self.image = image
         self.genres = genres
         self.synopsys = synopsys
-        
     }
-    
     
     //MARK: - Helper Methods
     
-    
+    ///Remove memory space - images
     static func clearCachedImages(){
         self.imagesCache.removeAll()
     }
     
+    /**
+        Method responsible for acquiring image data, converting it to UIImage and save in memory cache
+     
+        - Parameter completion: A block to execute results Data/Image
+    */
     
-    
-    ///pq to usando completion+result no projeto - qual a vantagem
     func image(completion: @escaping (Result<UIImage>) -> Void) {
-        if let cachedImage = Movie.imagesCache[self.image.absoluteString]  {
-            completion(Result.success(cachedImage))
+        ///Responsible for images stored
+        if let _cachedImage = Movie.imagesCache[self.image.absoluteString]  {
+            completion(Result.success(_cachedImage))
             return
         }
-        let requester = Requester()
-        requester.get(image, parameters: [:]) { (result:Result<Data>) in
+        ///Instance Requester
+        let _requester = Requester()
+        _requester.get(image, parameters: [:]) { (result:Result<Data>) in
             switch result {
             case .error(let error):
                 completion(Result.error(error))

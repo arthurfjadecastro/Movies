@@ -68,4 +68,3 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 Pods/
 Podfile.lock
-Movies/Keys.plist

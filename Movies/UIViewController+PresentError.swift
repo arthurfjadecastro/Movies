@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 
+
+
 extension UIViewController {
+    ///Method displays error alert
     func present(_ error: Error) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(ok)
-        self.present(alert, animated: true, completion: nil)
+        let _alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let _ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        _alert.addAction(_ok)
+        self.present(_alert, animated: true, completion: nil)
     }
     
 }

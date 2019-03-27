@@ -8,10 +8,11 @@
 
 import Foundation
 
-
+///Protocol that define MoviesFetcher
 protocol MoviesFetcher {
     func fetch(completion: @escaping (Result<[Movie]>) -> Void)
 }
+
 
 
 class MoviesFetcherFactory {

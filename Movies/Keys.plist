@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Keys.plist
+   Movies
+
+   Created by Arthur Castro on 23/03/19.
+   Copyright (c) 2019 Arthur Castro. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>THE_MOVIE_DATABASE_KEY</key>
+        <string>3fc66e3d69d9bb8511faf852cb9ebaf0</string>
+    </dict>
+</plist>

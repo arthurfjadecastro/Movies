@@ -12,13 +12,13 @@ import UIKit
 
 ///Basic elements to create coordinator
 protocol Coordinator {
-    
+    ///Current controller on the screen
     var currentController: UIViewController { get }
-    
+    //Initializer
     init(current: UIViewController)
-    
+    ///Method define present new screen
     func present(_ display: Display, beforePresenting: ((UIViewController) -> Void)?)
-    
+    ///Remove a current controller
     func dismiss()
     
 }

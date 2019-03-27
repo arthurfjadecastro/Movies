@@ -9,25 +9,41 @@
 import Foundation
 import UIKit
 
-
+/**
+    Structure contains constants of project
+*/
 struct K {
-    private init (){
-        
-    }
     
+    private init (){}
+    
+    /**
+        API Movie - http://api.themoviedb.org
+    */
     struct API {
+        /**
+            Property computed with a string url that is required for data consumption
+            - Return:
+         */
         static let theMovieDataBase: URL = {
             guard let url = URL(string: "http://api.themoviedb.org/3/movie/popular") else {
                 fatalError("Unable to create API URL from path")
             }
             return url
         }()
+        /**
+         Property computed with a string url that is required for image consumption
+         - Return:
+         */
         static let theMovieDataBaseImage: URL = {
             guard let url = URL(string: "http://image.tmdb.org/t/p/w500") else {
                 fatalError("Unable to create image URL from path")
             }
             return url
         }()
+        /**
+         Property computed with a string url that is required for genres consumption
+         - Return:
+         */
         static let theMovieDataBaseGenres: URL = {
             guard let url = URL(string: "https://api.themoviedb.org/3/genre/movie/list") else {
                 fatalError("Unable to create genres URL from path")
@@ -36,8 +52,14 @@ struct K {
         }()
       
     }
-    
+    /**
+        Structure that contains the organization of paths and keys to be used in the movie api
+    */
     struct Keys {
+        /**
+            Property computed
+            - Return:
+         */
         private static let config: [String:String] = {
             guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist") else {
                 fatalError("Keys.plist not found")
@@ -48,7 +70,10 @@ struct K {
             }
             return keys
         }()
-        
+        /**
+            Property computed
+            - Return:
+         */
         static var theMovieDatabase: String {
             guard let key =  Keys.config["THE_MOVIE_DATABASE_KEY"] else {
                 fatalError("You didn't add the key used to retrieve movies from 'The Movie Database' API")
@@ -56,14 +81,12 @@ struct K {
             return key
         }
     }
-    
+    /**
+        Constant values for layout Cell in TableView
+     */
     struct LayoutCell {
         static let widthInRelationToTableView: CGFloat = 1
         static let heightInRelationToWidth: CGFloat = ( 513 + 34 ) / 342
     }
-    
-    
-    
-    
-    
+
 }

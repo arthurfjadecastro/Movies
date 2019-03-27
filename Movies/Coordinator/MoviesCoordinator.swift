@@ -12,26 +12,29 @@ import UIKit
 
 class MoviesCoordinator: Coordinator {
     
+
     var currentController: UIViewController
-    
+
     required init(current: UIViewController) {
         self.currentController = current
     }
     
+    ///Present new controller, goes through a callback before completed.
     func present(_ display: Display, beforePresenting: ((UIViewController) -> Void)?) {
-    
         self.presentController(display, beforePresenting: beforePresenting)
-        
     }
     
+    ///Implementation remove actually controller in screen
     func dismiss() {
         self.currentController.dismiss(animated: true, completion: nil)
     }
     
-    
-    
     //MARK: - Helper methods
     
+    /**
+     
+     
+    */
     static func installCoordinator(){
         ///Load first viewcontroller
         guard var _initialController = UIApplication.shared.windows.first?.rootViewController as? (Coordinable & UIViewController) else {
@@ -41,7 +44,10 @@ class MoviesCoordinator: Coordinator {
         }
         _initialController.coordinator = MoviesCoordinator(current: _initialController)
     }
-    
+
+    /**
+     
+    */
     typealias CoordinableController = UIViewController & Coordinable
     fileprivate func presentController(_ display: Display, beforePresenting: ((UIViewController) -> Void)?  ) {
         
@@ -57,13 +63,9 @@ class MoviesCoordinator: Coordinator {
         self.present(with: self.currentController, and: _nextController)
     }
     
+    ///
     func present(with current: UIViewController,and next: UIViewController) {
-         
-//            next.modalTransitionStyle = .crossDissolve
             current.present(next, animated: true, completion: nil)
-        
-        
-        
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
- 
+    ///Inspected layer where cornerRadius is changed via storyboard
     @IBInspectable var cornerRadius: CGFloat {
         get{
             return self.layer.cornerRadius
@@ -21,7 +21,7 @@ extension UIView {
         }
     }
     
-    
+    ///Inspected layer where shadowOpacity is changed via storyboard
     @IBInspectable var shadowOpacity: Float {
         get {
             return self.layer.shadowOpacity
@@ -31,7 +31,7 @@ extension UIView {
         }
     }
     
-    
+    ///Inspected layer where shadowColor is changed via storyboard
     @IBInspectable var shadowColor: UIColor? {
         get {
             guard let color = self.layer.shadowColor else { return nil }
@@ -46,7 +46,7 @@ extension UIView {
         }
     }
     
-    
+    ///Inspected layer where shadowOffset is changed via storyboard
     @IBInspectable var shadowOffset: CGSize {
         get {
             return self.layer.shadowOffset
@@ -56,7 +56,7 @@ extension UIView {
         }
     }
     
-    
+    ///Inspected layer where shadowRadius is changed via storyboard
     @IBInspectable var shadowRadius: CGFloat {
         get{
             return self.layer.shadowRadius
@@ -65,10 +65,4 @@ extension UIView {
             self.layer.shadowRadius = shadowRadius
         }
     }
-    
-    
-    
-    
-    
-    
 }

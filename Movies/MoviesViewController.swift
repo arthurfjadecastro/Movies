@@ -16,6 +16,7 @@ class MoviesViewController: UIViewController, Coordinable {
     @IBOutlet weak var tableView: UITableView!
     //MARK: - Properties
     
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var coordinator: Coordinator?
     var movies = [Movie]()
@@ -30,6 +31,7 @@ class MoviesViewController: UIViewController, Coordinable {
         super.viewDidLoad()
         self.setupTableview()
         self.fetchMovies()
+
     }
     
     
