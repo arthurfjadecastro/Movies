@@ -14,7 +14,8 @@ protocol MoviesFetcher {
 }
 
 
-
+///Class responsible for ensuring that the creation of the update object of the films is not exposed
 class MoviesFetcherFactory {
+    ///Convenient name factory
     static var `default`: MoviesFetcher { return TheMovieDatabaseFetcher.shared }
 }

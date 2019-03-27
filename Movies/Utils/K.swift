@@ -22,7 +22,7 @@ struct K {
     struct API {
         /**
             Property computed with a string url that is required for data consumption
-            - Return:
+            - Return: Url DataBase
          */
         static let theMovieDataBase: URL = {
             guard let url = URL(string: "http://api.themoviedb.org/3/movie/popular") else {
@@ -32,7 +32,7 @@ struct K {
         }()
         /**
          Property computed with a string url that is required for image consumption
-         - Return:
+         - Return: Url Image
          */
         static let theMovieDataBaseImage: URL = {
             guard let url = URL(string: "http://image.tmdb.org/t/p/w500") else {
@@ -42,7 +42,7 @@ struct K {
         }()
         /**
          Property computed with a string url that is required for genres consumption
-         - Return:
+         - Return: Url Genres
          */
         static let theMovieDataBaseGenres: URL = {
             guard let url = URL(string: "https://api.themoviedb.org/3/genre/movie/list") else {
@@ -57,8 +57,18 @@ struct K {
     */
     struct Keys {
         /**
-            Property computed
-            - Return:
+         - Return: name key 
+         */
+        static var theMovieDatabase: String {
+            guard let key =  Keys.config["THE_MOVIE_DATABASE_KEY"] else {
+                fatalError("You didn't add the key used to retrieve movies from 'The Movie Database' API")
+            }
+            return key
+        }
+        /**
+            Property computed obtaining key value
+            - Note: There is configuration to search the path of file where the key to be used is located
+            - Return: Key in dictionary format String
          */
         private static let config: [String:String] = {
             guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist") else {
@@ -70,16 +80,6 @@ struct K {
             }
             return keys
         }()
-        /**
-            Property computed
-            - Return:
-         */
-        static var theMovieDatabase: String {
-            guard let key =  Keys.config["THE_MOVIE_DATABASE_KEY"] else {
-                fatalError("You didn't add the key used to retrieve movies from 'The Movie Database' API")
-            }
-            return key
-        }
     }
     /**
         Constant values for layout Cell in TableView

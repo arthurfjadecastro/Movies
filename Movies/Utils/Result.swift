@@ -8,7 +8,7 @@
 
 import Foundation
 
-///
+///Possible definitions with only cases
 enum Result<T> {
     case error(Error)
     case success(T)

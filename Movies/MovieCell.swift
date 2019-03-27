@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Hero
 
-///this cell is responsible for containing the visual element of image for the movies that are viewed.
+///This cell is responsible for containing the visual element of image for the movies that are viewed.
 class MovieCell: UITableViewCell  {
 
     @IBOutlet weak var posterImage: UIImageView!

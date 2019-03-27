@@ -13,8 +13,14 @@ import UIKit
 class MoviesCoordinator: Coordinator {
     
 
+    //MARK: - Properties
+    
+    ///Current controller displayed on screen
     var currentController: UIViewController
 
+    
+    //MARK: - Initializer
+    
     required init(current: UIViewController) {
         self.currentController = current
     }
@@ -29,12 +35,23 @@ class MoviesCoordinator: Coordinator {
         self.currentController.dismiss(animated: true, completion: nil)
     }
     
+    
+    
+    
     //MARK: - Helper methods
     
+    
     /**
-     
+        Present next view controller
+        - Parameter current: current controller
+        - Parameter next: next controller
      
     */
+    func present(with current: UIViewController,and next: UIViewController) {
+        current.present(next, animated: true, completion: nil)
+    }
+    
+    ///Install the coordinator by passing the first view controller of the project
     static func installCoordinator(){
         ///Load first viewcontroller
         guard var _initialController = UIApplication.shared.windows.first?.rootViewController as? (Coordinable & UIViewController) else {
@@ -46,7 +63,9 @@ class MoviesCoordinator: Coordinator {
     }
 
     /**
+        Instance the next viewcontroller that belongs to a coordinate style
      
+        - Note: Performs a callback that transits before presenting
     */
     typealias CoordinableController = UIViewController & Coordinable
     fileprivate func presentController(_ display: Display, beforePresenting: ((UIViewController) -> Void)?  ) {
@@ -63,10 +82,7 @@ class MoviesCoordinator: Coordinator {
         self.present(with: self.currentController, and: _nextController)
     }
     
-    ///
-    func present(with current: UIViewController,and next: UIViewController) {
-            current.present(next, animated: true, completion: nil)
-    }
+    
     
 }
 

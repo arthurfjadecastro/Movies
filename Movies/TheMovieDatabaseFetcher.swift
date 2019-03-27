@@ -17,7 +17,7 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
     
     //MARK: - Properties
     
-    ///
+    
     private var genresCache = [Int:String]()
     
     //MARK: - Shared Instance
@@ -29,9 +29,7 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
     
     //MARK: - Helper methods
     
-    /**
-        - Parameter completion:
-    */
+    
     private func genres(completion: @escaping (Result<[Int:String]>) -> Void ) {
         if(!self.genresCache.isEmpty) {
             completion(Result.success(self.genresCache))
@@ -43,18 +41,23 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
             case .error(let _error):
                 completion(Result.error(_error))
             case .success(let _genresModel):
+                //Parse
                 self.genresCache = _genresModel.asDictionary()
                 completion(Result.success(self.genresCache))
             }
-            
         }
         
     }
     
-    ///
+  
+    /**
+        Method that updates the movies accordingly the imposed rules.
+     - Note: The requirement of the site is to provide the API, encapsulating and abstracting its search into the Keys file. Attention to the explicit type of MoviesModel that removes method call ambiguity.
+    */
     func fetch(completion: @escaping (Result<[Movie]>) -> Void) {
-        let requester = Requester()
-        requester.get(K.API.theMovieDataBase, parameters: ["api_key":K.Keys.theMovieDatabase]) { (result:Result<MoviesModel>) in
+        ///Responsible for making requests
+        let _requester = Requester()
+        _requester.get(K.API.theMovieDataBase, parameters: ["api_key":K.Keys.theMovieDatabase]) { (result:Result<MoviesModel>) in
             switch result {
             case .error(let _error):
                 completion(Result.error(_error))
@@ -64,6 +67,7 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
                     case .error(let _error):
                         completion(Result.error(_error))
                     case .success(let _genres):
+                        //Parse
                         let _movies = _moviesModel.results.map({Movie(movie: $0, genres: _genres)})
                         completion(Result.success(_movies))
                     }
@@ -87,7 +91,7 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
             case genres = "genre_ids"
             case synopsys = "overview"
         }
-        //MARK: - Properties
+  
         
         ///Represents title at movie
         let title: String
@@ -98,7 +102,7 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
         ///Represents overview at movie
         let synopsys: String
 
-        //MARK: - Initalizer
+       
         
         //Decoder initializer needs container
         init(from decoder: Decoder) throws {
@@ -130,12 +134,12 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
             case results
         }
         
-        //MARK: - Properties
+   
         
         ///Represents result of all API movies
         let results: [MovieModel]
         
-        //MARK: - Initializer
+      
         
         //Decoder initializer needs container
         init(from decoder: Decoder) throws {
@@ -162,14 +166,14 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
             case id
         }
         
-        //MARK: - Properties
+      
         
         ///Represents genre id at API movies
         let id: Int
         ///Represents name genre at API movies
         let name: String
         
-        //MARK: - Initializer
+    
         
         //Decoder initializer needs container
         init(from decoder: Decoder) throws {
@@ -191,12 +195,11 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
             case genres
         }
         
-        //MARK: - Properties
-       
+        
         ///Represents all genres id of each movie
         let genres: [GenreModel]
         
-        //MARK: - Initializer
+     
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             self.genres = try container.decode([GenreModel].self, forKey: .genres)
@@ -217,6 +220,13 @@ class TheMovieDatabaseFetcher: MoviesFetcher {
 //MARK: - Extensions
 
 fileprivate extension Movie {
+    /**
+        Initializer is responsible for performing the data transformation
+     
+        - Note: The process  through entities analysis, where the image is
+                transformed into a complete url and the genres ids are
+                transformed into string
+    */
     init(movie: TheMovieDatabaseFetcher.MovieModel, genres: [Int:String]) {
         let _image = K.API.theMovieDataBaseImage.appendingPathComponent(movie.image)
         let _genres = genres.filter { (key, value) -> Bool in return movie.genres.contains(key) }.values

@@ -22,8 +22,7 @@ protocol RequesterDelegate {
 
 /**
     Class Library responsible for configuration and activities at the network layer
- 
-    ++
+    requisicao da web
 */
 class AlamofireRequester: RequesterDelegate {
     /**

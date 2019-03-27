@@ -18,10 +18,10 @@ class RequesterTests: XCTestCase {
         requester.delegate = RequesterMock()
         
         let expectation = XCTestExpectation(description: "Wait raw string")
-        requester.get(URL(string: "https://google.com.br")!, parameters: [:]) { (result) in
+        requester.get(URL(string: "https://google.com.br")!, parameters: [:]) { (result:Result<Data>) in
             switch result {
             case .success(let data):
-                XCTAssertEqual(data, fakeResponse)
+                XCTAssertEqual(data, dataMock)
                 expectation.fulfill()
             case .error(_):
                 XCTFail("The requester has changed the response")
@@ -86,8 +86,12 @@ fileprivate let fakeResponse = """
 }
 """
 
+fileprivate var dataMock = Data()
+
 class RequesterMock: RequesterDelegate  {
-    func request(url: URL, method: RequestType, parameters: [String : String], completion: @escaping (Result<String>) -> Void) {
-        completion(Result.success(fakeResponse))
+    func request(url: URL, method: RequestType, parameters: [String : String], completion: @escaping (Result<Data>) -> Void) {
+        dataMock = Data(fakeResponse.utf8)
+        completion(Result.success(dataMock))
     }
+   
 }

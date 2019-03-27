@@ -10,16 +10,20 @@ import UIKit
 
 
 
-
+/**
+ class responsible for managing the elements and behaviors of the screen of the movies.
+ */
 class MoviesViewController: UIViewController, Coordinable {
     
-    
     //MARK: - IBO
+    ///Table that disposes the movies
     @IBOutlet weak var tableView: UITableView!
     
-    
     //MARK: - Properties
+    
+    ///Responsible for coordinating the output or input of screens
     var coordinator: Coordinator?
+    ///Array that containing all movies
     var movies = [Movie]()
     
     
@@ -42,10 +46,10 @@ class MoviesViewController: UIViewController, Coordinable {
         
     }
     
-    ///
+    ///Search from a remote database updating the local content
     func fetchMovies(){
-        let fetcher = MoviesFetcherFactory.default
-        fetcher.fetch { (result) in
+        let _fetcher = MoviesFetcherFactory.default
+        _fetcher.fetch { (result) in
             switch result {
             case .error(let _error):
                 self.present(_error)

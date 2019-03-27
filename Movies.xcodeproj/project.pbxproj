@@ -127,6 +127,7 @@
 		3D340B582249B0B000CD6477 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				3D340B592249B0C800CD6477 /* Cells */,
 				3DCA78B822448633007761C7 /* MovieDetails.storyboard */,
 				3DCA78A822446308007761C7 /* Movies.storyboard */,
 			);
@@ -140,6 +141,7 @@
 				3DA1397E22485BB300A24A02 /* GenreCell.swift */,
 			);
 			name = Cells;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		3D340B5A2249B0E000CD6477 /* Fonts */ = {
@@ -211,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				3D340B5B2249B1B500CD6477 /* Model */,
-				3D340B592249B0C800CD6477 /* Cells */,
 				3D340B582249B0B000CD6477 /* Storyboards */,
 				3D340B572249B06800CD6477 /* Controllers */,
 			);
