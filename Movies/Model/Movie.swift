@@ -51,6 +51,7 @@ struct Movie {
         self.imagesCache.removeAll()
     }
     
+    
     /**
         Method responsible for acquiring image data, converting it to UIImage and save in memory cache
      

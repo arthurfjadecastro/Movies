@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Coordinator Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/Coordinator" class="dashAnchor"></a>
+    <a title="Coordinator Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (65% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Coordinator Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AlamofireRequester.html">AlamofireRequester</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GenreCell.html">GenreCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MovieCell.html">MovieCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MovieDetailsViewController.html">MovieDetailsViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MoviesCoordinator.html">MoviesCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MoviesFetcherFactory.html">MoviesFetcherFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MoviesViewController.html">MoviesViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Requester.html">Requester</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher.html">TheMovieDatabaseFetcher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher/MovieModel.html">– MovieModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher/MoviesModel.html">– MoviesModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher/GenreModel.html">– GenreModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher/GenresModel.html">– GenresModel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RequestType.html">RequestType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RequesterError.html">RequesterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Result.html">Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinable.html">Coordinable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MoviesFetcher.html">MoviesFetcher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RequesterDelegate.html">RequesterDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Display.html">Display</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/K.html">K</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/K/API.html">– API</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/K/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/K/LayoutCell.html">– LayoutCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Movie.html">Movie</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Coordinator</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">Coordinator</span></code></pre>
+
+                </div>
+              </div>
+            <p>Basic elements to create coordinator</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies11CoordinatorP17currentControllerSo06UIViewD0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/currentController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies11CoordinatorP17currentControllerSo06UIViewD0Cvp">currentController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Current controller on the screen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies11CoordinatorP7currentxSo16UIViewControllerC_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(current:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies11CoordinatorP7currentxSo16UIViewControllerC_tcfc">init(current:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">current</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies11CoordinatorP7present_16beforePresentingyAA7DisplayV_ySo16UIViewControllerCcSgtF"></a>
+                    <a name="//apple_ref/swift/Method/present(_:beforePresenting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies11CoordinatorP7present_16beforePresentingyAA7DisplayV_ySo16UIViewControllerCcSgtF">present(_:beforePresenting:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method define present new screen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">present</span><span class="p">(</span><span class="n">_</span> <span class="nv">display</span><span class="p">:</span> <span class="kt"><a href="../Structs/Display.html">Display</a></span><span class="p">,</span> <span class="nv">beforePresenting</span><span class="p">:</span> <span class="p">((</span><span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies11CoordinatorP7dismissyyF"></a>
+                    <a name="//apple_ref/swift/Method/dismiss()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies11CoordinatorP7dismissyyF">dismiss()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove a current controller</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dismiss</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-03-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TheMovieDatabaseFetcher Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/TheMovieDatabaseFetcher" class="dashAnchor"></a>
+    <a title="TheMovieDatabaseFetcher Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (65% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TheMovieDatabaseFetcher Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AlamofireRequester.html">AlamofireRequester</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GenreCell.html">GenreCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MovieCell.html">MovieCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MovieDetailsViewController.html">MovieDetailsViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MoviesCoordinator.html">MoviesCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MoviesFetcherFactory.html">MoviesFetcherFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MoviesViewController.html">MoviesViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Requester.html">Requester</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher.html">TheMovieDatabaseFetcher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher/MovieModel.html">– MovieModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher/MoviesModel.html">– MoviesModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher/GenreModel.html">– GenreModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TheMovieDatabaseFetcher/GenresModel.html">– GenresModel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RequestType.html">RequestType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RequesterError.html">RequesterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Result.html">Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinable.html">Coordinable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MoviesFetcher.html">MoviesFetcher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RequesterDelegate.html">RequesterDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Display.html">Display</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/K.html">K</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/K/API.html">– API</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/K/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/K/LayoutCell.html">– LayoutCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Movie.html">Movie</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TheMovieDatabaseFetcher</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">TheMovieDatabaseFetcher</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/MoviesFetcher.html">MoviesFetcher</a></span></code></pre>
+
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Shared%20Instance"></a>
+                <a name="//apple_ref/swift/Section/Shared Instance" class="dashAnchor"></a>
+                <a href="#/Shared%20Instance">
+                  <h3 class="section-name">Shared Instance</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies23TheMovieDatabaseFetcherC6sharedACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies23TheMovieDatabaseFetcherC6sharedACvpZ">shared</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span><span class="p">:</span> <span class="kt">TheMovieDatabaseFetcher</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Helper%20methods"></a>
+                <a name="//apple_ref/swift/Section/Helper methods" class="dashAnchor"></a>
+                <a href="#/Helper%20methods">
+                  <h3 class="section-name">Helper methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies23TheMovieDatabaseFetcherC5fetch10completionyyAA6ResultOySayAA0C0VGGc_tF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies23TheMovieDatabaseFetcherC5fetch10completionyyAA6ResultOySayAA0C0VGGc_tF">fetch(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method that updates the movies accordingly the imposed rules.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The requirement of the site is to provide the API, encapsulating and abstracting its search into the Keys file. Attention to the explicit type of MoviesModel that removes method call ambiguity.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums/Result.html">Result</a></span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Movie.html">Movie</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies23TheMovieDatabaseFetcherC0C5ModelV"></a>
+                    <a name="//apple_ref/swift/Struct/MovieModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies23TheMovieDatabaseFetcherC0C5ModelV">MovieModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <li><p>Model structure that reflects the object of consumption, movie.</p></li>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Adopt Decodable simplifying conversion</p>
+
+</div>
+
+                        <a href="../Classes/TheMovieDatabaseFetcher/MovieModel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">MovieModel</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies23TheMovieDatabaseFetcherC0A5ModelV"></a>
+                    <a name="//apple_ref/swift/Struct/MoviesModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies23TheMovieDatabaseFetcherC0A5ModelV">MoviesModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <li><p>Model structure that reflects the object of consumption, all movies.</p></li>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>results represents all movies consumed at API</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Adopt Decodable simplifying conversion</p>
+
+</div>
+
+                        <a href="../Classes/TheMovieDatabaseFetcher/MoviesModel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">MoviesModel</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies23TheMovieDatabaseFetcherC10GenreModelV"></a>
+                    <a name="//apple_ref/swift/Struct/GenreModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies23TheMovieDatabaseFetcherC10GenreModelV">GenreModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <li><p>Model structure that reflects the object of consumption, genre.</p></li>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Adopt Decodable simplifying conversion</p>
+
+</div>
+
+                        <a href="../Classes/TheMovieDatabaseFetcher/GenreModel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">GenreModel</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Movies23TheMovieDatabaseFetcherC11GenresModelV"></a>
+                    <a name="//apple_ref/swift/Struct/GenresModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Movies23TheMovieDatabaseFetcherC11GenresModelV">GenresModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <li><p>Model structure that reflects the object of consumption, all genres.</p></li>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Adopt Decodable simplifying conversion</p>
+
+</div>
+
+                        <a href="../Classes/TheMovieDatabaseFetcher/GenresModel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">GenresModel</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-03-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
