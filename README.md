@@ -97,6 +97,24 @@ root
 	
 - Singleton, Delegate entre outros padrões também foram utilizados.
 
+
+
+
+
+  
+    - Cobertura de código de 65%
+    
+    ![](https://media.giphy.com/media/tZDz2o12cwKYl8ZFHW/giphy.gif)          
+
+    - Kanban 
+    
+    ![](https://media.giphy.com/media/8UHSrOmENxnwIgb8T9/giphy.gif)
+
+
+
+
+
+
 ## Futuro
 
 Os planos para este projeto são:
@@ -114,15 +132,6 @@ Os planos para este projeto são:
       Proposta de aplicação prática em torno do conhecimento adquirido até o momento. 
     
     
-    
-     
-    - Cobertura de código de 65%
-    
-    ![](https://media.giphy.com/media/tZDz2o12cwKYl8ZFHW/giphy.gif)          
-
-    - Kanban 
-    
-    ![](https://media.giphy.com/media/8UHSrOmENxnwIgb8T9/giphy.gif)
     
 
 ### Autor
