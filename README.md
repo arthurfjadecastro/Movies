@@ -102,7 +102,7 @@ root
 
 
   
-    - Cobertura de código de 65%
+    - Cobertura de documentação 65%
     
     ![](https://media.giphy.com/media/tZDz2o12cwKYl8ZFHW/giphy.gif)          
 
